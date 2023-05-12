@@ -14,8 +14,8 @@ def create():
         'first_name' : request.form['first_name'],
         'last_name' : request.form['last_name'],
         'age' : request.form['age'],
-        'dojo_id' : request.form['dojo_id']
+        'dojo_id' : request.form['dojo_id'],
     }
     Ninjas.create(data)
-    return redirect('/')
+    return redirect(f'/dojo_details/{data["dojo_id"]}')
 
